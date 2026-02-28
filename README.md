@@ -1,1 +1,1 @@
-# 64-bit-Vedic-Multipier
+# 64-bit-Vedic-Multiplier
