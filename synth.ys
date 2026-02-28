@@ -1,0 +1,17 @@
+read_verilog vedicmul_2.v
+read_verilog vedicmul_4.v
+read_verilog vedicmul_8.v
+read_verilog vedicmul_16.v
+read_verilog vedicmul_32.v
+read_verilog vedicmu_64.v
+
+synth -top vedicmul_64 -flatten
+
+dfflibmap -liberty /home/kartheesan/Desktop/OpenROAD/test/Nangate45/Nangate45_typ.lib
+
+abc -liberty /home/kartheesan/Desktop/OpenROAD/test/Nangate45/Nangate45_typ.lib
+
+hilomap -hicell LOGIC1_X1 Z -locell LOGIC0_X1 Z
+
+write_verilog -noattr synth_output.v
+stat
